@@ -1,0 +1,1 @@
+You should add "extension=xdebug.so" to php.ini
