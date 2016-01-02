@@ -1,0 +1,15 @@
+# Template build file for 'perl-Date-Manip'.
+pkgname=perl-Date-Manip
+version=6.52
+revision=1
+wrksrc="Date-Manip-${version}"
+build_style=perl-module
+hostmakedepends="perl"
+makedepends="${hostmakedepends}"
+depends="${makedepends}"
+short_desc="Date manipulation routines"
+maintainer="Asaf Ohayon <asaf@sysbind.co.il>"
+homepage="http://search.cpan.org/dist/Date::Manip"
+license="Artistic, GPL-1"
+distfiles="http://search.cpan.org/CPAN/authors/id/S/SB/SBECK/Date-Manip-6.52.tar.gz"
+checksum=3f7b31a0d9f47a111e1a128e708d4c1ee0f6815ead81737fc4de96438f61e511
