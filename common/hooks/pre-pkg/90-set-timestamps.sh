@@ -4,8 +4,8 @@
 hook() {
 	local GIT_CMD date basepkg
 
-	# If XBPS_USE_GIT_COMMIT_DATE is disabled in conf file don't continue.
-	if [ -z $XBPS_USE_GIT_COMMIT_DATE ]; then
+	# If XBPS_USE_BUILD_MTIME is enabled in conf file don't continue.
+	if [ -n "$XBPS_USE_BUILD_MTIME" ]; then
 		return
 	fi
 
@@ -22,5 +22,5 @@ hook() {
 	fi
 	date=$($GIT_CMD -C ${XBPS_SRCPKGDIR}/${basepkg} log --pretty='%ci' --date=iso -n1 .)
 	msg_normal "$pkgver: setting mtimes to %s\n" "$(date --date "$date")"
-	find $PKGDESTDIR -print0 | xargs -0 touch --date "$date"
+	find $PKGDESTDIR -print0 | xargs -0 touch -h --date "$date"
 }
