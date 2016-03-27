@@ -1,0 +1,16 @@
+# Template file for 'ZoneMinder'
+
+pkgname=ZoneMinder
+version=1.29.0
+revision=rc1
+homepage="https://zoneminder.com"
+hostmakedepends="cmake"
+perl_deps="perl-DBI perl-DBD-mysql perl-Date-Manip perl-LWP perl-Sys-Mmap"
+makedepends="${hostmakedepends} ${perl_deps} libjpeg-turbo-devel libcurl-devel libmysqlclient-devel polkit-devel"
+depends=" ${perl_deps} perl libjpeg-turbo libcurl libmysqlclient polkit"
+short_desc="the top Linux video camera security and surveillance solution"
+license="GPL-2"
+distfiles="https://github.com/ZoneMinder/ZoneMinder/releases/download/v${version}-${revision}/ZoneMinder-${version}.tar.gz"
+checksum=adea06d6b1bc4283838497d4dcc6cfb2e51033d6b5eb9723e87db148c1ec5fda
+build_style=cmake
+maintainer="Asaf Ohayon <asaf@sysbind.co.il>"
